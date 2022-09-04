@@ -1,0 +1,36 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.question {
+    display: block;
+    background-color: red;
+    font-size: 1.8rem;
+    max-width: fit-content;
+}
+.answers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    gap: 1.5rem;
+    font-size: 2rem;
+}
+.answerBox {
+    display: flex;
+}
+.answerBox input {
+    background-color: red;
+}
