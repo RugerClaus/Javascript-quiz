@@ -2,8 +2,7 @@
 
 let questionNumber = 0
 console.log(`Question: ${questionNumber}`)
-let score
-
+let score = 0
 
 
 
@@ -13,23 +12,30 @@ questionBox.classList.add('question')
 const answersBox = document.getElementById('answersBox')
 answersBox.classList.add('answers')
 
-let selected = true
+let selected = false
 
 function quizBegan() {
     startQuizButton.style.display = 'none'
 }
 function scoreIncrease() {
-    score + 1
+    score++
 }
 function scoreDecrease() {
-    score - 1
+    score--
+}
+function selectItem(item,selected) {
+    
+    selected = true
+    console.log(selected)
+    item.style.backgroundColor = 'blue'
+    item.style.color = 'white'
 }
 
 startQuizButton.addEventListener('click', quizBegan)
 
 function question(question,answer1,answer2,answer3,answer4) {
 
-    questionNumber = 1
+    questionNumber++
     console.log(`Question: ${questionNumber}`)
 
     questionBox.append(question)
@@ -55,14 +61,59 @@ function question(question,answer1,answer2,answer3,answer4) {
     const answerBoxes = document.querySelectorAll('.answerBox')
     answerBoxes.forEach(answer => {
         answer.addEventListener('click', () => {
-            if(answer == answerBoxes[3]) {
-                scoreIncrease()
-            }else {
-                scoreDecrease()
+            selectItem(answer)
+            switch(questionNumber) {
+                case 1: 
+                    if(answer == answerBoxes[3]) {
+                        scoreIncrease()
+                    }else {
+                        scoreDecrease()
+                    }
+                    
+                    nextQuestion()
+                    getSecondQuestion()
+                    break
+                case 2: 
+                    if(answer == answerBoxes[2]){
+                        scoreIncrease()
+                    }
+                    else {
+                        scoreDecrease()
+                    }
+                    nextQuestion()
+                    getThirdQuestion()
+                    break
+                case 3:
+                    if(answer == answerBoxes[3]){
+                        scoreIncrease()
+                    }
+                    else {
+                        scoreDecrease()
+                    }
+                    nextQuestion()
+                    getFourthQuestion()
+                    break
+                case 4:
+                    if(answer == answerBoxes[1]){
+                        scoreIncrease()
+                    }
+                    else {
+                        scoreDecrease()
+                    }
+                    nextQuestion()
+                    getFifthQuestion()
+                    case 5:
+                        if(answer == answerBoxes[1]){
+                           scoreIncrease() 
+                        }
+                        else {
+                            scoreDecrease()
+                        }
+                        nextQuestion()
+                        document.getElementById('scoreBox').innerHTML = `Final
+                        Score: ${score}/5`
+                        break
             }
-            
-            nextQuestion()
-            getSecondQuestion()
             
         })
     })
@@ -102,7 +153,35 @@ function getThirdQuestion() {
         })
     })
 }
+function getFourthQuestion() {
+    fetch("RushTrivia.json")
+    .then(response => {
+        response.json()
+        .then(data => {
+            const questionFour = JSON.stringify(data.$q4.question)
+            const answer1 = JSON.stringify(data.$q4.answers.answer1)
+            const answer2 = JSON.stringify(data.$q4.answers.answer2)
+            const answer3 = JSON.stringify(data.$q4.answers.answer3)
+            const answer4 = JSON.stringify(data.$q4.answers.answer4)
+            question(questionFour,answer1,answer2,answer3,answer4)
+        })
+    })
+}
 
+function getFifthQuestion() {
+    fetch("RushTrivia.json")
+    .then(response => {
+        response.json()
+        .then(data => {
+            const questionFive = JSON.stringify(data.$q5.question)
+            const answer1 = JSON.stringify(data.$q5.answers.answer1)
+            const answer2 = JSON.stringify(data.$q5.answers.answer2)
+            const answer3 = JSON.stringify(data.$q5.answers.answer3)
+            const answer4 = JSON.stringify(data.$q5.answers.answer4)
+            question(questionFive,answer1,answer2,answer3,answer4)
+        })
+    })
+}
 
 function beginQuiz() {
     
