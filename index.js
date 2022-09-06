@@ -1,11 +1,8 @@
 
-
 let questionNumber = 0
 console.log(`Question: ${questionNumber}`)
 let score = 0
-
-
-
+const scoreBox = document.getElementById('scoreBox')
 const startQuizButton = document.getElementById('startButton')
 const questionBox = document.getElementById('questionsBox')
 questionBox.classList.add('question')
@@ -16,6 +13,11 @@ let selected = false
 
 function quizBegan() {
     startQuizButton.style.display = 'none'
+    questionNumber = 0
+    score = 0
+    scoreBox.style.display = 'none'
+    beginQuiz()
+    
 }
 function scoreIncrease() {
     score++
@@ -29,6 +31,13 @@ function selectItem(item,selected) {
     console.log(selected)
     item.style.backgroundColor = 'blue'
     item.style.color = 'white'
+}
+function finalQuestion() {
+    nextQuestion()
+    scoreBox.style.display = 'block'
+    scoreBox.innerHTML = `Final
+    Score: ${score > 4 ? score - 1 : score + 1}/5`
+    startQuizButton.style.display = 'block'
 }
 
 startQuizButton.addEventListener('click', quizBegan)
@@ -61,7 +70,7 @@ function question(question,answer1,answer2,answer3,answer4) {
     const answerBoxes = document.querySelectorAll('.answerBox')
     answerBoxes.forEach(answer => {
         answer.addEventListener('click', () => {
-            selectItem(answer)
+            selectItem(answer,true)
             switch(questionNumber) {
                 case 1: 
                     if(answer == answerBoxes[3]) {
@@ -109,9 +118,8 @@ function question(question,answer1,answer2,answer3,answer4) {
                         else {
                             scoreDecrease()
                         }
-                        nextQuestion()
-                        document.getElementById('scoreBox').innerHTML = `Final
-                        Score: ${score}/5`
+                        finalQuestion()
+                        
                         break
             }
             
