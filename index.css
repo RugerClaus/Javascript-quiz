@@ -30,7 +30,13 @@ body {
 }
 .answerBox {
     display: flex;
+    background-color: white;
+    border: none;
+    font-size: 2rem;
 }
-.answerBox input {
-    background-color: red;
+.answerBox:hover {
+    border: 1px solid black;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
 }
