@@ -36,7 +36,7 @@ function finalQuestion() {
     nextQuestion()
     scoreBox.style.display = 'block'
     scoreBox.innerHTML = `Final
-    Score: ${score > 4 ? score - 1 : score + 1}/5`
+    Score: ${score == 5 ? score - 1 : score + 1}/5`
     startQuizButton.style.display = 'block'
 }
 
@@ -113,11 +113,13 @@ function question(question,answer1,answer2,answer3,answer4) {
                     getFifthQuestion()
                     case 5:
                         if(answer == answerBoxes[1]){
-                           scoreIncrease() 
+                           scoreIncrease()
+                           
                         }
                         else {
                             scoreDecrease()
                         }
+                        
                         finalQuestion()
                         
                         break
