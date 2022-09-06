@@ -112,11 +112,7 @@ function question(question,answer1,answer2,answer3,answer4) {
                     nextQuestion()
                     getFifthQuestion()
                     case 5:
-                        if(answer == answerBoxes[1]){
-                           scoreIncrease()
-                           
-                        }
-                        else {
+                        if(answer != answerBoxes[1]){
                             scoreDecrease()
                         }
                         
