@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
 </head>
+
 <body>
-    <h1>Rush Trivia</h1>
-    <button id="startButton">Begin quiz</button>
-    <div id="questionsBox">
-        
-    </div>
-    <div id="answersBox">
-
-    </div>
-    <div id="quizButtons">
-
-    </div>
-    <div id="scoreBox"></div>
-    <script src="index.js"></script>
+  <h1 id="header">Rush Trivia</h1>
+  <button id="startButton" onclick="beginQuiz()">Begin quiz</button>
+  <h2 id="questionsBox" class="question"></h2>
+  <ul id="quizButtons">
+    <li class="answer"></li>
+    <li class="answer"></li>
+    <li class="answer"></li>
+    <li class="answer"></li>
+  </ul>
+  <div id="scoreBox"></div>
+  <script src="index.js" type="module"></script>
 </body>
+
 </html>

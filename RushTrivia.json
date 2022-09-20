@@ -2,50 +2,50 @@
     "$q1" : {
         "question" : "What is the name of Rush's original drummer?",
         "answers": {
-            "answer1" : "(A): John Bonham",
-            "answer2" : "(B): James Franco",
-            "answer3" : "(C): Billie Jean",
-            "answer4" : "(D): John Rutsey"
+            "answer1" : "John Bonham",
+            "answer2" : "James Franco",
+            "answer3" : "Billie Jean",
+            "answer4" : "John Rutsey"
     
         } 
     },
     "$q2" : {
         "question" : "What year did the album 'Hemispheres' release?",
         "answers": {
-            "answer1" : "(A): 1994",
-            "answer2" : "(B): 1874",
-            "answer3" : "(C): 1978",
-            "answer4" : "(D): 1492"
+            "answer1" : "1994",
+            "answer2" : "1874",
+            "answer3" : "1978",
+            "answer4" : "1492"
     
         } 
     },
     "$q3" : {
         "question" : "What year did the band form?",
         "answers": {
-            "answer1" : "(A): 1960",
-            "answer2" : "(B): 1873",
-            "answer3" : "(C): 1999",
-            "answer4" : "(D): 1969"
+            "answer1" : "1960",
+            "answer2" : "1873",
+            "answer3" : "1999",
+            "answer4" : "1969"
     
         } 
     },
     "$q4" : {
         "question" : "What is Alex Lifeson's real last name?",
         "answers": {
-            "answer1" : "(A): Jackson",
-            "answer2" : "(B): Zivojinovic",
-            "answer3" : "(C): Ryan",
-            "answer4" : "(D): Kolishnakov"
+            "answer1" : "Jackson",
+            "answer2" : "Zivojinovic",
+            "answer3" : "Ryan",
+            "answer4" : "Kolishnakov"
     
         } 
     },
     "$q5" : {
         "question" : "What is the name of the band's 1991 Album, featuring a rap by Geddy Lee?",
         "answers": {
-            "answer1" : "(A): Hemispheres",
-            "answer2" : "(B): Roll The Bones",
-            "answer3" : "(C): Let It Be",
-            "answer4" : "(D): Moving Pictures"
+            "answer1" : "Hemispheres",
+            "answer2" : "Roll The Bones",
+            "answer3" : "Let It Be",
+            "answer4" : "Moving Pictures"
     
         } 
     }
