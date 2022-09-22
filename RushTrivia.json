@@ -48,5 +48,6 @@
             "answer4" : "Moving Pictures"
     
         } 
-    }
+    },
+    "gameOver" : "Game over"
 }
